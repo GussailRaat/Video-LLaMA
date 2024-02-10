@@ -117,6 +117,16 @@ DON'T have to do anything now!!
 ## How to Run Demo Locally
 
 Firstly, set the `llama_model` (for the path to the language decoder), `imagebind_ckpt_path` (for the path to the audio encoder), `ckpt` (for the path to VL branch) and `ckpt_2` (for the path to AL branch) in [eval_configs/video_llama_eval_withaudio.yaml](./eval_configs/video_llama_eval_withaudio.yaml) accordingly.
+
+
+For example: give paths like that in ./eval_configs/video_llama_eval_withaudio.yaml
+```
+  llama_model: './eval_configs/ckpt/llama-2-7b-chat-hf/' #"ckpt/vicuna-7b/" or "ckpt/vicuna-13b/" or "ckpt/vicuna-7b/" or "ckpt/llama-2-7b-chat-hf"  or "ckpt/llama-2-13b-chat-hf"
+  imagebind_ckpt_path: './eval_configs/path/' #"ckpt/imagebind_path/"
+  ckpt: './eval_configs/path/VL_LLaMA_2_7B_Pretrained.pth' # 'path/pretrained_visual_branch_ckpt'   # you can use our pretrained ckpt from https://huggingface.co/DAMO-NLP-SG/Video-LLaMA-2-13B-Pretrained/
+  ckpt_2: './eval_configs/path/AL_LLaMA_2_7B_Pretrained.pth' #'path/pretrained_audio_branch_ckpt'
+```
+
 Then run the script:
 ```
 python demo_audiovideo.py \
